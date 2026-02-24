@@ -1,0 +1,82 @@
+import { useState } from "react";
+import type { Transaction, Category } from "../types";
+import TransactionItem from "./TransactionItem";
+
+// TODO 1: Define a TypeScript interface called "TransactionListProps" with:
+//         - transactions: Transaction[]
+//         - onDeleteTransaction: a function that takes (id: number) and returns void
+
+const categoryFilters: ("All" | Category)[] = [
+  "All",
+  "Food",
+  "Transport",
+  "Entertainment",
+  "Shopping",
+  "Bills",
+  "Income",
+  "Other",
+];
+
+// TODO 2: Update the function signature to accept props using your interface.
+
+function TransactionList() {
+  // TODO 3: Create a state variable called "activeFilter" of type ("All" | Category),
+  //         initialized to "All"
+
+  // TODO 4: Create a "filteredTransactions" variable that:
+  //         - If activeFilter is "All", returns all transactions
+  //         - Otherwise, returns only transactions matching the selected category
+  //         Hint: Use a ternary with .filter()
+
+  return (
+    <div className="transactions-card">
+      <div className="transactions-header">
+        <h2>📋 Transactions</h2>
+        {/* TODO 5: Show the count of filtered transactions
+            <span className="transaction-count">
+              {filteredTransactions.length} {filteredTransactions.length === 1 ? "item" : "items"}
+            </span>
+        */}
+      </div>
+
+      {/* Filter Buttons */}
+      <div className="filter-bar">
+        {/* TODO 6: Map over categoryFilters to create filter buttons.
+            Each button should:
+            - Have className "filter-btn" (add "active" class when it matches activeFilter)
+            - Call setActiveFilter on click
+            
+            Hint:
+            {categoryFilters.map((filter) => (
+              <button
+                key={filter}
+                className={`filter-btn ${activeFilter === filter ? "active" : ""}`}
+                onClick={() => setActiveFilter(filter)}
+              >
+                {filter}
+              </button>
+            ))}
+        */}
+      </div>
+
+      {/* Transaction Items */}
+      <div className="transaction-list">
+        {/* TODO 7: Conditionally render either:
+            A) An empty state when filteredTransactions has no items:
+               <div className="empty-state">
+                 <div className="empty-icon">💰</div>
+                 <p>No transactions yet</p>
+                 <p className="hint">Add your first transaction to get started</p>
+               </div>
+
+            B) A list of TransactionItem components when there are items:
+               Map over filteredTransactions and render a TransactionItem for each one.
+               Pass the transaction and onDeleteTransaction as props.
+               Don't forget the key prop!
+        */}
+      </div>
+    </div>
+  );
+}
+
+export default TransactionList;
