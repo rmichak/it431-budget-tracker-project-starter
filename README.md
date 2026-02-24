@@ -1,10 +1,26 @@
-# 💰 Student Budget Tracker — Starter Files
+# 💰 Student Budget Tracker — Starter Project
 
 **IT 431 — Advanced Web Development | Midterm Project**
 
 ## Overview
 
 Build a React + TypeScript budget tracker application. The app lets users add income and expenses, view a running balance, filter transactions by category, and delete entries.
+
+## Getting Started
+
+```bash
+# 1. Clone this repository
+git clone https://github.com/rmichak/it431-budget-tracker-project-starter.git
+cd it431-budget-tracker-project-starter
+
+# 2. Install dependencies
+npm install
+
+# 3. Start the dev server
+npm run dev
+```
+
+Open the URL shown in your terminal (usually `http://localhost:5173`). You'll see the app header and footer, but the middle will be mostly empty — that's expected! Your job is to complete the TODO comments in each file.
 
 ## What's Provided
 
@@ -15,7 +31,7 @@ Build a React + TypeScript budget tracker application. The app lets users add in
 
 ## What You Need To Build
 
-Work through the TODO comments in each file. Here's the order I recommend:
+Work through the TODO comments in each file. Here's the recommended order:
 
 ### 1. `components/TransactionItem.tsx` (Start here — smallest component)
 - Define the props interface
@@ -42,27 +58,11 @@ Work through the TODO comments in each file. Here's the order I recommend:
 - Write calculateSummary, handleAddTransaction, handleDeleteTransaction
 - Render all child components with correct props
 
-## Getting Started
-
-```bash
-# 1. Create a new Vite project
-npm create vite@latest student-budget-tracker -- --template react-ts
-
-# 2. Install dependencies
-cd student-budget-tracker
-npm install
-
-# 3. Replace the src/ folder contents with these starter files
-
-# 4. Start the dev server
-npm run dev
-```
-
 ## Deployment
 
 When your app is working locally:
 
-1. Create a GitHub repository and push your code
+1. Create your own GitHub repository and push your code
 2. Deploy to Vercel (connect your GitHub repo)
 3. Submit both URLs (GitHub repo + Vercel live link)
 
@@ -92,7 +92,7 @@ Here's what the finished app looks like:
 - Start small — get one component rendering before moving to the next
 - Use the browser console to debug (F12 → Console tab)
 - The CSS classes in the TODO comments match the provided stylesheet exactly
-- When in doubt, check the TypeScript types in `types.ts` — they tell you exactly what shape the data should be
+- When in doubt, check the TypeScript types in `types.ts`
 - Test your form: try submitting with empty fields to make sure validation works
 
 ## Key Concepts Used
